@@ -1,10 +1,15 @@
 package phytechexerciseServer.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 
@@ -30,8 +35,9 @@ public class Stock implements Serializable {
 	@Column(name = "id")
 	long id;
 	
-	@OneToOne(mappedBy = "stock")
-	@PrimaryKeyJoinColumn
+	@OneToOne
+	@MapsId
+	@JoinColumn(name="id")
 	Item item;
 
 	int amount;

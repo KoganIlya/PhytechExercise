@@ -1,4 +1,4 @@
-package phytechexerciseServer.model.dto;
+package phytechexerciseServer.dto;
 
 import java.io.Serializable;
 

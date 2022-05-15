@@ -2,14 +2,14 @@ package phytechexerciseServer.service;
 
 import java.util.List;
 
-import phytechexerciseServer.model.dto.ItemDto;
+import phytechexerciseServer.dto.ItemDto;
 
 public interface ServerService {
 	
-	List<ItemDto> getItemsList (); 
+	List <ItemDto> getItemsList (); 
 	
-	int amountOfItem(long id);
+	int amountOfItem(long itemId);
 	
-	ItemDto sellItem(long id);
+	ItemDto sellItem(long itemId);
 
 }

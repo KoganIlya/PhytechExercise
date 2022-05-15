@@ -7,8 +7,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,23 +23,22 @@ import lombok.ToString;
 @Entity
 @Getter
 @ToString
-public class Item implements Serializable{
+public class Item implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -2461901494388251338L;
-	
-	
+
 	@Id
-	@Column(name = "stock_id")
+	@Column(name = "id")
 	long id;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "stock_id")
-    Stock stock;
-	
+	@PrimaryKeyJoinColumn
+	Stock stock;
+
 	String description;
-	
+
 	float price;
 
 }
